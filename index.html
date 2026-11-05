@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <script src="script.js" defer></script>
+
+</head>
+<style>
+  
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3e8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    width: 450px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    color: #7b2cbf;
+}
+
+h2 {
+    color: #444;
+}
+
+p {
+    color: #666;
+}
+
+#alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.alternativa {
+    padding: 13px;
+    border: 2px solid #8d5bc2;
+    background-color: #8141c2;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.alternativa:hover:not(:disabled) {
+    background-color: #ead5ff;
+}
+
+.alternativa:disabled {
+    cursor: not-allowed;
+}
+
+.correta {
+    background-color: #a8e6a3;
+    border-color: #4caf50;
+}
+
+.errada {
+    background-color: #f5aaaa;
+    border-color: #e53935;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8e44ad;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover:not(:disabled) {
+    background-color: #6c3483;
+}
+
+button:disabled {
+    background-color: #b79fd3;
+    cursor: not-allowed;
+}
+
+#pontuacao {
+    font-weight: bold;
+    color: #7b2cbf;
+}
+ 
+</style>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <h1>Quem me conhece melhor? </h1>
+        <p>Vamos descobrir quem me conhece de verdade!</p>
+
+        <div id="quiz">
+
+            <h2 id="pergunta"></h2>
+
+            <div id="alternativas"></div>
+
+            <p id="pontuacao">Pontuação: 0</p>
+
+            <button id="proxima" onclick="proximaPergunta()" disabled>
+                Próxima pergunta
+            </button>
+
+        </div>
+
+        <div id="resultado" style="display: none;">
+
+            <h2>Quiz finalizado! </h2>
+
+            <p id="mensagemResultado"></p>
+
+            <button onclick="reiniciarQuiz()">
+                Jogar novamente
+            </button>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>
+
+
+
+
+
